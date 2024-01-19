@@ -2,209 +2,212 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-  <style>
-    /* Add your custom styles here */
-    body {
-      padding-top: 56px;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
-    .navbar-nav .nav-item {
-      margin-right: 120px;
-    }
+    <style>
+        /* Add your custom styles here */
+        body {
+            padding-top: 56px;
+        }
 
-    #carouselExample {
-      max-width: 160rem;
-      margin: 0 auto;
-    }
+        .navbar-nav .nav-item {
+            margin-right: 120px;
+        }
 
-    .carousel-inner {
-      max-height: 400px;
-      text-align: center;
-    }
+        @media (min-width: 992px) {
+            #changeButton {
+                display: none;
+            }
+        }
 
-    .carousel-item img {
-      object-fit: contain;
-      max-width: 100%;
-      max-height: 100%;
-      margin: 0 auto;
-    }
+        /* Added styles for the footer */
+        footer {
+            background-color: #343a40;
+            color: #ffffff;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            text-align: center;
+            padding: 10px 0;
+        }
 
-    @media (min-width: 992px) {
-      #changeButton {
-        display: none;
-      }
-    }
+        .footer-icons {
+            text-align: center;
+        }
 
-    /* Added styles for the footer */
-    footer {
-      background-color: #343a40;
-      color: #ffffff;
-      padding: 20px 0;
-    }
+        .footer-icon {
+            font-size: 14px;
+            color: #ffffff;
+            margin: 0 10px;
+            transition: color 0.3s ease-in-out;
+        }
 
-    .footer-icons {
-      text-align: right;
-    }
+        .footer-icon:hover {
+            color: #28a745;
+        }
 
-    .footer-icon {
-      font-size: 24px;
-      color: #ffffff;
-      margin: 0 10px;
-      transition: color 0.3s ease-in-out;
-    }
+        /* Main qismidagi rasimlarni to'liq ekran qoplamasi */
+        .main-image-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
 
-    .footer-icon:hover {
-      color: #28a745;
-    }
+        .overlay-container {
+            width: calc(50% - 10px);
+            margin-bottom: 20px;
+            position: relative;
+            overflow: hidden;
+        }
 
-    .footer-links {
-      text-align: left;
-      margin-top: 10px;
-    }
+        /* Overlay styling */
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+        }
 
-    .footer-link {
-      display: block;
-      font-size: 14px;
-      color: #ffffff;
-      margin-bottom: 10px;
-      transition: color 0.3s ease-in-out;
-      text-decoration: none; /* Remove default underline */
-    }
+        .overlay:hover {
+            opacity: 1;
+        }
 
-    .footer-link:hover {
-      color: #007bff;
-    }
+        @media (max-width: 767px) {
+            /* Styles for screens smaller than 767px (phones) */
+            .main-image-container {
+                flex-direction: column;
+            }
 
-  </style>
+            .overlay-container {
+                width: 100%;
+            }
+        }
+    </style>
 
-  <!-- JavaScript code for language change -->
-  <script>
-    function changeLanguage(language) {
-      document.documentElement.lang = language;
-      location.reload();
-    }
-  </script>
+    <!-- JavaScript code for language change -->
+    <script>
+        function changeLanguage(language) {
+            document.documentElement.lang = language;
+            location.reload();
+        }
+    </script>
 
-  <!-- Font Awesome Kit Script -->
-  <script src="https://kit.fontawesome.com/your-fontawesome-kit-id.js" crossorigin="anonymous"></script>
+    <!-- Font Awesome Kit Script -->
+    <script src="https://kit.fontawesome.com/your-fontawesome-kit-id.js" crossorigin="anonymous"></script>
 
-  <title>Architecture Website</title>
+    <title>Dreamsbuildersarchitects</title>
 </head>
 
 <body>
 
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-    <!-- Navbar content -->
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <a class="navbar-brand" href="#"><h6>Amirjon</h6></a>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ml-auto">
-        <li class="nav-item active">
-          <a class="nav-link" href="#"><i class="fas fa-home"></i> Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#about"><i class="fas fa-info-circle"></i> About</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#portfolio"><i class="fas fa-images"></i> Portfolio</a>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="contactDropdown" role="button" data-toggle="dropdown"
-            aria-haspopup="true" aria-expanded="false">
-            <i class="fas fa-envelope"></i> Contact
-          </a>
-          <!-- Dropdown content -->
-          <div class="dropdown-menu" aria-labelledby="contactDropdown">
-            <a class="dropdown-item" href="#">Email</a>
-            <a class="dropdown-item" href="#">Phone</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Other Contact Info</a>
-          </div>
-        </li>
-        <!-- Language Dropdown -->
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="languageDropdown" role="button" data-toggle="dropdown"
-            aria-haspopup="true" aria-expanded="false">
-            <i class="fas fa-globe"></i> Language
-          </a>
-          <!-- Dropdown content -->
-          <div class="dropdown-menu" aria-labelledby="languageDropdown">
-            <a class="dropdown-item" href="javascript:void(0);" onclick="changeLanguage('uz')">Uzbek</a>
-            <a class="dropdown-item" href="javascript:void(0);" onclick="changeLanguage('en')">English</a>
-            <a class="dropdown-item" href="javascript:void(0);" onclick="changeLanguage('ru')">Russian</a>
-          </div>
-        </li>
-        <!-- End Language Dropdown -->
-        <li class="nav-item" id="changeButton">
-          <a class="nav-link" href="#change"><i class="fas fa-edit"></i> Ozgartiruvchi</a>
-        </li>
-      </ul>
-    </div>
-  </nav>
-
-  <!-- Carousel -->
-  <div id="carouselExample" class="carousel slide" data-ride="carousel">
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-        <img src="../Imgs/HD.jpg" class="d-block w-100" alt="Image 1">
-      </div>
-      <div class="carousel-item">
-        <img src="../Imgs/Black.jpeg" class="d-block w-100" alt="Image 2">
-      </div>
-      <div class="carousel-item">
-        <img src="../Imgs/image.svg" class="d-block w-100" alt="Image 3">
-      </div>
-    </div>
-    <a class="carousel-control-prev" href="#carouselExample" role="button" data-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="sr-only">Previous</span>
-    </a>
-    <a class="carousel-control-next" href="#carouselExample" role="button" data-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="sr-only">Next</span>
-    </a>
-  </div>
-
-  <!-- Your content goes here -->
-
-  <main>
-    <!-- Your main content -->
-  </main>
-
-  <!-- Footer -->
-  <footer class="bg-dark text-light">
-    <div class="container">
-      <div class="row">
-        <div class="col-12 col-md-6 footer-icons">
-          <a href="#" class="footer-icon"><i class="fab fa-telegram"></i></a>
-          <a href="#" class="footer-icon"><i class="
-            far fa-envelope"></i></a>
-            <a href="#" class="footer-icon"><i class="fab fa-instagram"></i></a>
-            <a href="#" class="footer-icon"><i class="fab fa-twitter"></i></a>
-          </div>
-          <div class="col-12 col-md-6 footer-links">
-            <a href="#" class="footer-link">Link 1</a>
-            <a href="#" class="footer-link">Link 2</a>
-            <a href="#" class="footer-link">Link 3</a>
-            <a href="#" class="footer-link">Link 4</a>
-            <a href="#" class="footer-link">Link 5</a>
-          </div>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <!-- Navbar content -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <a class="navbar-brand" href="#">
+            <h6>Amirjon</h6>
+        </a>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#"><i class="fas fa-home"></i> Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#about"><i class="fas fa-info-circle"></i> About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#portfolio"><i class="fas fa-images"></i> Portfolio</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="contactDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="fas fa-envelope"></i> Contact
+                    </a>
+                    <!-- Dropdown content -->
+                    <div class="dropdown-menu" aria-labelledby="contactDropdown">
+                        <a class="dropdown-item" href="#">Email</a>
+                        <a class="dropdown-item" href="#">Phone</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Other Contact Info</a>
+                    </div>
+                </li>
+                <!-- Language Dropdown -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="languageDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="fas fa-globe"></i> Language
+                    </a>
+                    <!-- Dropdown content -->
+                    <div class="dropdown-menu" aria-labelledby="languageDropdown">
+                        <a class="dropdown-item" href="javascript:void(0);" onclick="changeLanguage('uz')">Uzbek</a>
+                        <a class="dropdown-item" href="javascript:void(0);" onclick="changeLanguage('en')">English</a>
+                        <a class="dropdown-item" href="javascript:void(0);" onclick="changeLanguage('ru')">Russian</a>
+                    </div>
+                </li>
+                <!-- End Language Dropdown -->
+                <li class="nav-item" id="changeButton">
+                    <a class="nav-link" href="#change"><i class="fas fa-edit"></i> Ozgartiruvchi</a>
+                </li>
+            </ul>
         </div>
-      </div>
+    </nav>
+
+    <!-- Your content goes here -->
+
+    <main>
+        <div class="container">
+            <div class="row main-image-container">
+                <div class="col-md-6 overlay-container">
+                    <img src="../All Pictures/Black.jpg" class="img-fluid main-image" alt="Your Image">
+                    <div class="overlay">
+                        <h3>Your Text Overlay</h3>
+                        <p>Additional information about the image</p>
+                    </div>
+                </div>
+                <div class="col-md-6 overlay-container">
+                    <img src="../All Pictures/Black.jpg" class="img-fluid main-image" alt="Your Image">
+                    <div class="overlay">
+                        <h3>Your Text Overlay</h3>
+                        <p>Additional information about the image</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-md-6 footer-icons">
+                    <i class="fab fa-telegram footer-icon"></i>
+                    <i class="far fa-envelope footer-icon"></i>
+                    <i class="fab fa-instagram footer-icon"></i>
+                    <i class="fab fa-twitter footer-icon"></i>
+                </div>
+            </div>
+        </div>
     </footer>
-  
+
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-  
-  </body>
-  
-  </html>
-  
+
+</body>
+
+</html>
