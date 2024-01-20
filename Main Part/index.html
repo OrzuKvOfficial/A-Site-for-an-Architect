@@ -8,13 +8,85 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
     <style>
-        /* Add your custom styles here */
         body {
             padding-top: 56px;
         }
 
         .navbar-nav .nav-item {
             margin-right: 120px;
+        }
+        
+        
+        @media (max-width: 1200px) {
+            footer {
+                text-align: center;
+            }
+
+            .footer-icons {
+                display: flex;
+                font-size: 14px;
+                color: #ffffff;
+                margin: 0 10px;
+                transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
+            }
+
+            .footer-icon {
+                margin: 0 10px;
+                font-size: 20px;
+                width: auto;
+                transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
+            }
+
+            .footer-icon:hover {
+                color: #28a745;
+                transform: scale(1.2);
+            }
+
+            p {
+                margin-bottom: 5px;
+                width: auto;
+                transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
+            }
+
+            p:hover {
+                color: #28a745;
+                transform: scale(1.2);
+            }
+        }
+
+        @media (max-width: 767px) {
+            footer {
+                text-align: center;
+            }
+
+            .footer-icons {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .footer-icon {
+                margin: 0 10px;
+                font-size: 20px;
+                width: auto;
+                transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
+            }
+
+            .footer-icon:hover {
+                color: #28a745;
+                transform: scale(1.2);
+            }
+
+            p {
+                margin-bottom: 5px;
+                width: auto;
+                transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
+            }
+
+            p:hover {
+                color: #28a745;
+                transform: scale(1.2);
+            }
         }
 
         @media (min-width: 992px) {
@@ -23,33 +95,29 @@
             }
         }
 
-        /* Added styles for the footer */
         footer {
             background-color: #343a40;
             color: #ffffff;
             position: fixed;
             bottom: 0;
             width: 100%;
-            text-align: center;
-            padding: 10px 0;
-        }
 
-        .footer-icons {
-            text-align: center;
         }
 
         .footer-icon {
             font-size: 14px;
             color: #ffffff;
             margin: 0 10px;
-            transition: color 0.3s ease-in-out;
+            transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
+            width: 20px;
+            margin: 14px;
         }
 
         .footer-icon:hover {
             color: #28a745;
+            transform: scale(1.2);
         }
 
-        /* Main qismidagi rasimlarni to'liq ekran qoplamasi */
         .main-image-container {
             display: flex;
             flex-wrap: wrap;
@@ -63,7 +131,6 @@
             overflow: hidden;
         }
 
-        /* Overlay styling */
         .overlay {
             position: absolute;
             top: 0;
@@ -86,7 +153,6 @@
         }
 
         @media (max-width: 767px) {
-            /* Styles for screens smaller than 767px (phones) */
             .main-image-container {
                 flex-direction: column;
             }
@@ -97,7 +163,6 @@
         }
     </style>
 
-    <!-- JavaScript code for language change -->
     <script>
         function changeLanguage(language) {
             document.documentElement.lang = language;
@@ -105,7 +170,6 @@
         }
     </script>
 
-    <!-- Font Awesome Kit Script -->
     <script src="https://kit.fontawesome.com/your-fontawesome-kit-id.js" crossorigin="anonymous"></script>
 
     <title>Dreamsbuildersarchitects</title>
@@ -114,7 +178,6 @@
 <body>
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-        <!-- Navbar content -->
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -138,7 +201,6 @@
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <i class="fas fa-envelope"></i> Contact
                     </a>
-                    <!-- Dropdown content -->
                     <div class="dropdown-menu" aria-labelledby="contactDropdown">
                         <a class="dropdown-item" href="#">Email</a>
                         <a class="dropdown-item" href="#">Phone</a>
@@ -146,20 +208,17 @@
                         <a class="dropdown-item" href="#">Other Contact Info</a>
                     </div>
                 </li>
-                <!-- Language Dropdown -->
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="languageDropdown" role="button"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <i class="fas fa-globe"></i> Language
                     </a>
-                    <!-- Dropdown content -->
                     <div class="dropdown-menu" aria-labelledby="languageDropdown">
                         <a class="dropdown-item" href="javascript:void(0);" onclick="changeLanguage('uz')">Uzbek</a>
                         <a class="dropdown-item" href="javascript:void(0);" onclick="changeLanguage('en')">English</a>
                         <a class="dropdown-item" href="javascript:void(0);" onclick="changeLanguage('ru')">Russian</a>
                     </div>
                 </li>
-                <!-- End Language Dropdown -->
                 <li class="nav-item" id="changeButton">
                     <a class="nav-link" href="#change"><i class="fas fa-edit"></i> Ozgartiruvchi</a>
                 </li>
@@ -167,10 +226,8 @@
         </div>
     </nav>
 
-    <!-- Your content goes here -->
-
     <main>
-        <div class="container">
+        <div class="container-fluid">
             <div class="row main-image-container">
                 <div class="col-md-6 overlay-container">
                     <img src="../All Pictures/Black.jpg" class="img-fluid main-image" alt="Your Image">
@@ -186,15 +243,42 @@
                         <p>Additional information about the image</p>
                     </div>
                 </div>
+                <div class="col-md-6 overlay-container">
+                    <img src="../All Pictures/Black.jpg" class="img-fluid main-image" alt="Another Image">
+                    <div class="overlay">
+                        <h3>Overlay for Another Image</h3>
+                        <p>Additional information about the image</p>
+                    </div>
+                </div>
+                <div class="col-md-6 overlay-container">
+                    <img src="../All Pictures/Black.jpg" class="img-fluid main-image" alt="Another Image">
+                    <div class="overlay">
+                        <h3>Overlay for Another Image</h3>
+                        <p>Additional information about the image</p>
+                    </div>
+                </div>
+                <div class="col-md-6 overlay-container">
+                    <img src="../All Pictures/Black.jpg" class="img-fluid main-image" alt="Another Image">
+                    <div class="overlay">
+                        <h3>Overlay for Another Image</h3>
+                        <p>Additional information about the image</p>
+                    </div>
+                </div>
+                <div class="col-md-6 overlay-container">
+                    <img src="../All Pictures/Black.jpg" class="img-fluid main-image" alt="Another Image">
+                    <div class="overlay">
+                        <h3>Overlay for Another Image</h3>
+                        <p>Additional information about the image</p>
+                    </div>
+                </div>
             </div>
         </div>
     </main>
 
-    <!-- Footer -->
     <footer class="bg-dark text-light">
-        <div class="container">
-            <div class="row">
-                <div class="col-12 col-md-6 footer-icons">
+        <div id="NowC" class="container-fluid">
+            <div class="row justify-content-end">
+                <div class="col-12 col-md-6 footer-icons text-right">
                     <i class="fab fa-telegram footer-icon"></i>
                     <i class="far fa-envelope footer-icon"></i>
                     <i class="fab fa-instagram footer-icon"></i>
