@@ -6,188 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-
-    <style>
-        body {
-            background-color: #343a40;
-            padding-top: 56px;
-        }
-
-        .navbar-nav .nav-item {
-            margin-right: 120px;
-        }
-
-        .carousel-inner {
-            max-height: auto;
-            /* O'zingiz kerakli o'lchamni tanlang */
-            overflow: hidden;
-        }
-
-        .main-image-container img {
-            width: 100%;
-            height: auto;
-        }
-        .middle{
-            width: 100%;
-            height: 18px;
-        }
-
-
-        @media (max-width: 1200px) {
-            footer {
-                text-align: center;
-            }
-
-            .footer-icons {
-                display: flex;
-                font-size: 14px;
-                color: #ffffff;
-                margin: 0 10px;
-                transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
-            }
-
-            .footer-icon {
-                margin: 0 10px;
-                font-size: 20px;
-                width: auto;
-                transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
-            }
-
-            .footer-icon:hover {
-                color: #28a745;
-                transform: scale(1.2);
-            }
-
-            p {
-                margin-bottom: 5px;
-                width: auto;
-                transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
-            }
-
-            p:hover {
-                color: #28a745;
-                transform: scale(1.2);
-            }
-        }
-
-        @media (max-width: 767px) {
-            footer {
-                text-align: center;
-            }
-
-            .footer-icons {
-                display: flex;
-                align-items: center;
-                justify-content: center;
-            }
-
-            .footer-icon {
-                margin: 0 10px;
-                font-size: 20px;
-                width: auto;
-                transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
-            }
-
-            .footer-icon:hover {
-                color: #28a745;
-                transform: scale(1.2);
-            }
-
-            p {
-                margin-bottom: 5px;
-                width: auto;
-                transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
-            }
-
-            p:hover {
-                color: #28a745;
-                transform: scale(1.2);
-            }
-        }
-
-        @media (min-width: 992px) {
-            #changeButton {
-                display: none;
-            }
-        }
-
-        footer {
-            background-color: #343a40;
-            color: #ffffff;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-        }
-
-        .footer-icon {
-            font-size: 14px;
-            color: #ffffff;
-            margin: 0 10px;
-            transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
-            width: 20px;
-            margin: 14px;
-        }
-
-        .footer-icon:hover {
-            color: #28a745;
-            transform: scale(1.2);
-        }
-
-        .main-image-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-        }
-
-        .overlay-container {
-            width: calc(50% - 10px);
-            margin-bottom: 20px;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.5);
-            color: #fff;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            opacity: 0;
-            transition: opacity 0.3s ease-in-out;
-        }
-
-        .overlay:hover {
-            opacity: 1;
-        }
-
-        @media (max-width: 767px) {
-            .main-image-container {
-                flex-direction: column;
-            }
-
-            .overlay-container {
-                width: 100%;
-            }
-        }
-    </style>
-
-    <script>
-        function changeLanguage(language) {
-            document.documentElement.lang = language;
-            location.reload();
-        }
-    </script>
-
+    <!-- OR -->
     <script src="https://kit.fontawesome.com/your-fontawesome-kit-id.js" crossorigin="anonymous"></script>
     <link rel="shortcut icon" type="image" href="../All Pictures/Logo-Architect.png">
     <title>Dreamsbuildersarchitects</title>
+    <link rel="stylesheet" href="./main.css">
+
 </head>
 
 <body>
@@ -211,8 +35,7 @@
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="contactDropdown" role="button"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <i class="fas fa-envelope"></i> Contact
-                    </a>
+                        <i class="fas fa-envelope"></i> Contact</a>
                     <div class="dropdown-menu" aria-labelledby="contactDropdown">
                         <a class="dropdown-item" href="#">Email</a>
                         <a class="dropdown-item" href="#">Phone</a>
@@ -221,7 +44,7 @@
                     </div>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#about"><i class="fas fa-info-circle"></i> About</a>
+                    <a class="nav-link" href="https://www.netlify.com/"><i class="fas fa-info-circle"></i> About</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="languageDropdown" role="button"
@@ -268,9 +91,9 @@
         </div>
         <!-- End Carousel Section -->
 
-            <div class="middle">
+        <div class="middle">
 
-            </div>
+        </div>
 
         <div class="container-fluid">
             <div class="row main-image-container">
@@ -319,7 +142,13 @@
             </div>
         </div>
 
+
+        <div class="footer-top">
+
+        </div>
+
     </main>
+
 
 
     <footer class="bg-dark text-light">
@@ -338,6 +167,7 @@
         </div>
     </footer>
 
+    <script src="./main.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>

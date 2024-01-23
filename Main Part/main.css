@@ -1,0 +1,169 @@
+        body {
+            background-color: #343a40;
+            padding-top: 56px;
+        }
+
+        .navbar-nav .nav-item {
+            margin-right: 120px;
+        }
+
+        .carousel-inner {
+            max-height: auto;
+            /* O'zingiz kerakli o'lchamni tanlang */
+            overflow: hidden;
+        }
+
+        .main-image-container img {
+            width: 100%;
+            height: auto;
+        }
+
+        .middle {
+            width: 100%;
+            height: 18px;
+        }
+
+
+        @media (max-width: 1200px) {
+            footer {
+                text-align: center;
+            }
+
+            .footer-icons {
+                display: flex;
+                font-size: 14px;
+                color: #ffffff;
+                margin: 0 10px;
+                transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
+            }
+
+            .footer-icon {
+                margin: 0 10px;
+                font-size: 20px;
+                width: auto;
+                transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
+            }
+
+            .footer-icon:hover {
+                color: #28a745;
+                transform: scale(1.2);
+            }
+
+            p {
+                margin-bottom: 5px;
+                width: auto;
+                transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
+            }
+
+            p:hover {
+                color: #28a745;
+                transform: scale(1.2);
+            }
+        }
+
+        @media (max-width: 767px) {
+            footer {
+                text-align: center;
+            }
+
+            .footer-icons {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .footer-icon {
+                margin: 0 10px;
+                font-size: 20px;
+                width: auto;
+                transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
+            }
+
+            .footer-icon:hover {
+                color: #28a745;
+                transform: scale(1.2);
+            }
+
+            p {
+                margin-bottom: 5px;
+                width: auto;
+                transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
+            }
+
+            p:hover {
+                color: #28a745;
+                transform: scale(1.2);
+            }
+        }
+
+        @media (min-width: 992px) {
+            #changeButton {
+                display: none;
+            }
+        }
+
+        footer {
+            background-color: #343a40;
+            color: #ffffff;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .footer-icon {
+            font-size: 14px;
+            color: #ffffff;
+            margin: 0 10px;
+            transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
+            width: 20px;
+            margin: 14px;
+        }
+
+        .footer-icon:hover {
+            color: #28a745;
+            transform: scale(1.2);
+        }
+
+        .main-image-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .overlay-container {
+            width: calc(50% - 10px);
+            margin-bottom: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+        }
+
+        .overlay:hover {
+            opacity: 1;
+        }
+
+        @media (max-width: 767px) {
+            .main-image-container {
+                flex-direction: column;
+            }
+
+            .overlay-container {
+                width: 100%;
+            }
+        }
