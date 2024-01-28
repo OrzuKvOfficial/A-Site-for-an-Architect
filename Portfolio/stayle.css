@@ -10,26 +10,9 @@ body {
     font-weight: inherit;
 }
 
-
-#accordion {
-    margin-top: 20px;
-    /* Adjust the margin as needed */
-
-    @keyframes moveRightToLeft {
-        0% {
-            transform: translateX(100%);
-        }
-
-        100% {
-            transform: translateX(-100%);
-        }
-    }
-
-    .moving-text {
-        display: inline-block;
-        animation: moveRightToLeft 10s linear infinite;
-        /* Adjust the duration and timing function as needed */
-    }
+.main-image-container img {
+    width: 100%;
+    height: auto;
 }
 
 .empty-field {
@@ -87,11 +70,6 @@ body {
         width: auto;
         transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
     }
-
-    p:hover {
-        color: #28a745;
-        transform: scale(1.2);
-    }
 }
 
 @media (max-width: 767px) {
@@ -116,18 +94,9 @@ body {
         color: #28a745;
         transform: scale(1.2);
     }
-
-    p {
-        margin-bottom: 5px;
-        width: auto;
-        transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
-    }
-
-    p:hover {
-        color: #28a745;
-        transform: scale(1.2);
-    }
 }
+
+
 
 
 @media (min-width: 992px) {
@@ -191,4 +160,3 @@ footer {
 .overlay:hover {
     opacity: 1;
 }
-
