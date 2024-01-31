@@ -10,50 +10,11 @@ body {
     font-weight: inherit;
 }
 
-/* .card-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: #fff;
-    text-align: center;
-    opacity: 0;
-    transition: opacity 0.3s ease-in-out;
-}
-
-.card:hover .card-overlay {
-    opacity: 1;
-}
-
-.card-overlay h3 {
-    font-size: 1.5rem;
-    margin-bottom: 10px;
-}
-
-.card-overlay p {
-    font-size: 1rem;
-    margin-bottom: 20px;
-}
-
-.card-overlay a {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #fff;
-    color: #000;
-    text-decoration: none;
-    font-weight: bold;
-    border-radius: 5px;
-} */
 
 .main-image-container img {
     width: 100%;
     height: auto;
+
 }
 
 .empty-field {
@@ -62,7 +23,11 @@ body {
 }
 .anything{
     width: 100%;
-    height: 100px;
+    height: 20px;
+}
+.anything2{
+    width: 100%;
+    height: 28px;
 }
 
 .footer-icons {
@@ -200,8 +165,40 @@ footer {
     text-align: center;
     opacity: 0;
     transition: opacity 0.3s ease-in-out;
+
 }
 
 .overlay:hover {
     opacity: 1;
+}
+
+@media (max-width: 900px){
+    .anything{
+        width: 100%;
+        height: 20px;
+    }
+    .anything2{
+        width: 100%;
+        height: 25px;
+    }
+}
+@media (max-width: 290px){
+    .anything{
+        width: 100%;
+        height: 15px;
+    }
+    .anything2{
+        width: 100%;
+        height:10px;
+    }
+}
+@media (max-width: 380px){
+    .anything{
+        width: 100%;
+        height: 15px;
+    }
+    .anything2{
+        width: 100%;
+        height:10px;
+    }
 }
