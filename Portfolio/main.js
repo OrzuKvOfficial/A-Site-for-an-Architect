@@ -30,3 +30,72 @@ document.getElementById('rangOzgartir').addEventListener('click', function() {
   // Yangi rangni qo'yish
   buttonElement.style.backgroundColor = ranglar[indeks];
 });
+
+// Tarjima funksiyasi
+function tarjima(qator, til) {
+  // Bu joyda siz tilni almashtirish logikasini yozishingiz kerak
+  // Masalan, API orqali tarjima qilishingiz mumkin
+  // Mana shu joyda API-ni chaqirish misoli
+  // Bu faqat misol, aslida siz boshqa usullarni ham ishlatingiz mumkin
+  // Masalan, lokal fayllar orqali tarjima qilish
+  // yoki saytdan ma'lumot olish
+  // Bu yerda tilni o'zgartirish funksiyasini ishlataylik
+  let tarjimaNatija = "";
+
+  // API-ni chaqiramiz yoki boshqa usul orqali tilni almashtiramiz
+  // Bu faqat misol, siz o'zingiz API-ni qo'shishingiz kerak
+  // Misol uchun API manzili va so'rovnoma kerak bo'ladi
+  // let apiUrl = "https://api.example.com/tarjima";
+  // let response = makeApiRequest(apiUrl, { qator, til });
+
+  // Keyingi qismni API-ni chaqirishga moslashtiring
+  // Yuqoridagi qismni o'zgartirish uchun kerak bo'ladi
+  // Agar API-ni ishlatsangiz, uni javobini olish uchun kerak bo'ladi
+  // let javob = response.json();
+
+  // Javobni olishni boshqarish uchun o'zingizni talablarizga muvofiq kod yozing
+  // Bu faqat misol
+  // if (javob.success) {
+  //     tarjimaNatija = javob.result;
+  // } else {
+  //     tarjimaNatija = "Tarjima amalga oshmadi";
+  // }
+
+  // Agar siz boshqa tilni o'zgartirish usulini ishlatsangiz, uni yozing
+
+  return tarjimaNatija;
+}
+
+// Tarjima qilmoqchi bo'lgan matn
+let matn = "Hello, world!";
+// Tarjima qilmoqchi bo'lgan til
+let til = "uzbek";
+
+// Tarjima funksiyasini chaqirish
+let natija = tarjima(matn, til);
+
+// Tarjima natijasini konsolga chiqarish
+console.log(natija);
+
+// API manzili
+const apiUrl = 'https://jsonplaceholder.typicode.com/users/1';
+
+// Fetch funktsiyasi orqali API ga so'rov jo'natish
+fetch(apiUrl)
+  .then(response => {
+    // HTTP statusni tekshirish
+    if (!response.ok) {
+      throw new Error(`HTTP xato: ${response.status}`);
+    }
+    // JSON formatda javobni qaytarish
+    return response.json();
+  })
+  .then(data => {
+    // Ma'lumotlarni olish
+    console.log('API javobi:', data);
+    // Ma'lumotlarni ishlatishingiz mumkin
+  })
+  .catch(error => {
+    // Xatolarni aniqlash va xabar chiqarish
+    console.error('Xatolik yuz berdi:', error.message);
+  });
