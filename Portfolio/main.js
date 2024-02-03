@@ -99,3 +99,36 @@ fetch(apiUrl)
     // Xatolarni aniqlash va xabar chiqarish
     console.error('Xatolik yuz berdi:', error.message);
   });
+
+  let element = document.getElementById('elementId');
+// Elementning matnini o'zgartirish
+element.innerHTML = 'Yangi matn';
+
+console.log('Bu xabar console-da chiqadi');
+
+// Funksiya yaratish
+function salom(name) {
+  return 'Salom, ' + name + '!';
+}
+// Funksiyani chaqirish
+let salomMatni = salom('Dunyo');
+console.log(salomMatni);
+
+// Foydalanuvchidan ma'lumot olish
+let ism = prompt('Ismingizni kiriting:');
+// Foydalanuvchi ismini chiqarish
+alert('Salom, ' + ism + '!');
+
+// Interval orqali har bir sekundda bir narsani bajaramiz
+setInterval(function() {
+  console.log('Narsa');
+}, 1000);
+
+// Timeout orqali bir marotaba narsani bajaramiz
+setTimeout(function() {
+  console.log('Bir marta');
+}, 5000);
+// Elementni animatsiyalash
+let animatsiyaElementi = document.getElementById('animatsiyaId');
+animatsiyaElementi.style.transition = 'all 2s'; // 2 sekundga o'tish
+animatsiyaElementi.style.opacity = 0; // Opasitetni o'zgartirish
