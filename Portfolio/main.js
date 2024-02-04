@@ -139,3 +139,23 @@ let text = `Welcome ${firstName}, ${lastName}!`;let price = 10;
 let VAT = 0.25;
 
 let total = `Total: ${(price * (1 + VAT)).toFixed(2)}`;
+const express = require('express');
+const nodemailer = require('nodemailer');
+const bodyParser = require('body-parser');
+
+const app = express();
+const port = 3000;
+
+app.use(bodyParser.urlencoded({ extended: true }));
+
+app.post('/send-email', (req, res) => {
+  const email = req.body.email;
+  const message = req.body.message;
+
+  // Nodemailer yordamida emailni yuborish
+  // Bu joyda email yuborish uchun SMTP serveri haqida ma'lumotlarni sozlash kerak
+});
+
+app.listen(port, () => {
+  console.log(`Server is listening at http://localhost:${port}`);
+});
