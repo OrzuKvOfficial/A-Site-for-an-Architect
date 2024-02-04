@@ -132,3 +132,10 @@ setTimeout(function() {
 let animatsiyaElementi = document.getElementById('animatsiyaId');
 animatsiyaElementi.style.transition = 'all 2s'; // 2 sekundga o'tish
 animatsiyaElementi.style.opacity = 0; // Opasitetni o'zgartirish
+let firstName = "John";
+let lastName = "Doe";
+
+let text = `Welcome ${firstName}, ${lastName}!`;let price = 10;
+let VAT = 0.25;
+
+let total = `Total: ${(price * (1 + VAT)).toFixed(2)}`;
