@@ -159,3 +159,17 @@ app.post('/send-email', (req, res) => {
 app.listen(port, () => {
   console.log(`Server is listening at http://localhost:${port}`);
 });
+const http = require('http');
+
+const server = http.createServer((req, res) => {
+  res.writeHead(200, {'Content-Type': 'text/plain'});
+  res.end('Salom, dunyo!\n');
+});
+
+const PORT = 3000;
+const HOST = 'localhost';
+
+server.listen(PORT, HOST, () => {
+  console.log(`Server http://${HOST}:${PORT}/ da ishlayapti`);
+});
+
