@@ -199,3 +199,14 @@ function sum(...args) {
 }
 
 let x = sum(4, 9, 16, 25, 29, 100, 66, 77);
+print
+document.getElementById("myH").innerHTML = "My First Page";
+document.getElementById("myP").innerHTML = "My first paragraph.";
+const x = 5;
+const y = 6;
+const z = x + y;
+const price1 = 5;
+const price2 = 6;
+const PI = 3.141592653589793;
+PI = 3.14;      // This will give an error
+PI = PI + 10;   // This will also give an error
