@@ -213,3 +213,16 @@ PI = PI + 10;   // This will also give an error
 for (let i = 1; i <= 5; i++) {
   console.log(i);
 }
+// HTML-dagi ranglarni olish
+var ranglar = document.querySelectorAll('.rang');
+
+// Har bir rang uchun hodisani qo'shish
+ranglar.forEach(function(rang) {
+    rang.addEventListener('click', function() {
+        // Rangni olish
+        var tanlanganRang = this.getAttribute('data-rang');
+        // Qo'llanuvchiga tanlangan rangni chiqarish
+        console.log('Tanlangan rang: ' + tanlanganRang);
+        // Boshqa amallar ham bajara olish mumkin
+    });
+});
