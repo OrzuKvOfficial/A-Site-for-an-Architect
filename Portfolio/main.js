@@ -235,3 +235,19 @@ function animatsiya() {
       button.classList.remove('animating');
   }, 500);
 }
+document.addEventListener('DOMContentLoaded', function() {
+  var animatsiyaElementi = document.getElementById('animatsiyaElementi');
+  var yurishX = 0; // Boshlang'ich X qiymati
+  var animatsiyaHodisasi = setInterval(yurish, 10); // Animatsiya yurish tezligi
+
+  function yurish() {
+      // Agar animatsiya elementi ekran chegarasidan o'tsa, intervalni to'xtatish
+      if (yurishX >= window.innerWidth - animatsiyaElementi.offsetWidth) {
+          clearInterval(animatsiyaHodisasi);
+      } else {
+          // Animatsiya elementini o'ngga o'zgartirish
+          yurishX++;
+          animatsiyaElementi.style.left = yurishX + 'px';
+      }
+  }
+});
