@@ -226,3 +226,12 @@ ranglar.forEach(function(rang) {
         // Boshqa amallar ham bajara olish mumkin
     });
 });
+function animatsiya() {
+  var button = document.getElementById('animatsiyaBtn');
+  // Qo'llanuvchi tugmani o'zgartirish
+  button.classList.add('animating');
+  // Animatsiya tugagandan so'ng olib tashlash
+  setTimeout(function() {
+      button.classList.remove('animating');
+  }, 500);
+}
