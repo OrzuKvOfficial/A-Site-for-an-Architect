@@ -1,19 +1,19 @@
 var x; // Declare x
 x = 5; // Assign 5 to x
 
-elem = document.getElementById("demo"); 
-elem.innerHTML = x;     
+elem = document.getElementById("demo");
+elem.innerHTML = x;
 const person = {
-    firstName: "John",
-    lastName : "Doe",
-    id       : 5566,
-    fullName : function() {
-      return this.firstName + " " + this.lastName;
-    }
-  };          
-  
-  // JavaScript kodlari
-document.getElementById('rangOzgartir').addEventListener('click', function() {
+  firstName: "John",
+  lastName: "Doe",
+  id: 5566,
+  fullName: function () {
+    return this.firstName + " " + this.lastName;
+  }
+};
+
+// JavaScript kodlari
+document.getElementById('rangOzgartir').addEventListener('click', function () {
   // Rang o'zgartirish uchun kerakli kodlar
   let ranglar = ['qora', 'oq'];
   let buttonElement = document.getElementById('rangOzgartir');
@@ -100,7 +100,7 @@ fetch(apiUrl)
     console.error('Xatolik yuz berdi:', error.message);
   });
 
-  let element = document.getElementById('elementId');
+let element = document.getElementById('elementId');
 // Elementning matnini o'zgartirish
 element.innerHTML = 'Yangi matn';
 
@@ -120,12 +120,12 @@ let ism = prompt('Ismingizni kiriting:');
 alert('Salom, ' + ism + '!');
 
 // Interval orqali har bir sekundda bir narsani bajaramiz
-setInterval(function() {
+setInterval(function () {
   console.log('Narsa');
 }, 1000);
 
 // Timeout orqali bir marotaba narsani bajaramiz
-setTimeout(function() {
+setTimeout(function () {
   console.log('Bir marta');
 }, 5000);
 // Elementni animatsiyalash
@@ -135,7 +135,7 @@ animatsiyaElementi.style.opacity = 0; // Opasitetni o'zgartirish
 let firstName = "John";
 let lastName = "Doe";
 
-let text = `Welcome ${firstName}, ${lastName}!`;let price = 10;
+let text = `Welcome ${firstName}, ${lastName}!`; let price = 10;
 let VAT = 0.25;
 
 let total = `Total: ${(price * (1 + VAT)).toFixed(2)}`;
@@ -162,7 +162,7 @@ app.listen(port, () => {
 const http = require('http');
 
 const server = http.createServer((req, res) => {
-  res.writeHead(200, {'Content-Type': 'text/plain'});
+  res.writeHead(200, { 'Content-Type': 'text/plain' });
   res.end('Salom, dunyo!\n');
 });
 
@@ -175,20 +175,20 @@ server.listen(PORT, HOST, () => {
 
 function loadDoc() {
   const xhttp = new XMLHttpRequest();
-  xhttp.onload = function() {myFunction(this);}
+  xhttp.onload = function () { myFunction(this); }
   xhttp.open("GET", "cd_catalog.xml");
   xhttp.send();
 }
 function myFunction(xml) {
   const xmlDoc = xml.responseXML;
   const x = xmlDoc.getElementsByTagName("CD");
-  let table="<tr><th>Artist</th><th>Title</th></tr>";
-  for (let i = 0; i <x.length; i++) {
+  let table = "<tr><th>Artist</th><th>Title</th></tr>";
+  for (let i = 0; i < x.length; i++) {
     table += "<tr><td>" +
-    x[i].getElementsByTagName("ARTIST")[0].childNodes[0].nodeValue +
-    "</td><td>" +
-    x[i].getElementsByTagName("TITLE")[0].childNodes[0].nodeValue +
-    "</td></tr>";
+      x[i].getElementsByTagName("ARTIST")[0].childNodes[0].nodeValue +
+      "</td><td>" +
+      x[i].getElementsByTagName("TITLE")[0].childNodes[0].nodeValue +
+      "</td></tr>";
   }
   document.getElementById("demo").innerHTML = table;
 }
@@ -217,37 +217,64 @@ for (let i = 1; i <= 5; i++) {
 var ranglar = document.querySelectorAll('.rang');
 
 // Har bir rang uchun hodisani qo'shish
-ranglar.forEach(function(rang) {
-    rang.addEventListener('click', function() {
-        // Rangni olish
-        var tanlanganRang = this.getAttribute('data-rang');
-        // Qo'llanuvchiga tanlangan rangni chiqarish
-        console.log('Tanlangan rang: ' + tanlanganRang);
-        // Boshqa amallar ham bajara olish mumkin
-    });
+ranglar.forEach(function (rang) {
+  rang.addEventListener('click', function () {
+    // Rangni olish
+    var tanlanganRang = this.getAttribute('data-rang');
+    // Qo'llanuvchiga tanlangan rangni chiqarish
+    console.log('Tanlangan rang: ' + tanlanganRang);
+    // Boshqa amallar ham bajara olish mumkin
+  });
 });
 function animatsiya() {
   var button = document.getElementById('animatsiyaBtn');
   // Qo'llanuvchi tugmani o'zgartirish
   button.classList.add('animating');
   // Animatsiya tugagandan so'ng olib tashlash
-  setTimeout(function() {
-      button.classList.remove('animating');
+  setTimeout(function () {
+    button.classList.remove('animating');
   }, 500);
 }
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
   var animatsiyaElementi = document.getElementById('animatsiyaElementi');
   var yurishX = 0; // Boshlang'ich X qiymati
   var animatsiyaHodisasi = setInterval(yurish, 10); // Animatsiya yurish tezligi
 
   function yurish() {
-      // Agar animatsiya elementi ekran chegarasidan o'tsa, intervalni to'xtatish
-      if (yurishX >= window.innerWidth - animatsiyaElementi.offsetWidth) {
-          clearInterval(animatsiyaHodisasi);
-      } else {
-          // Animatsiya elementini o'ngga o'zgartirish
-          yurishX++;
-          animatsiyaElementi.style.left = yurishX + 'px';
-      }
+    // Agar animatsiya elementi ekran chegarasidan o'tsa, intervalni to'xtatish
+    if (yurishX >= window.innerWidth - animatsiyaElementi.offsetWidth) {
+      clearInterval(animatsiyaHodisasi);
+    } else {
+      // Animatsiya elementini o'ngga o'zgartirish
+      yurishX++;
+      animatsiyaElementi.style.left = yurishX + 'px';
+    }
   }
 });
+// JavaScript yordamida tugmani tanlab olamiz
+
+
+// Tugma bosilganda amalni boshlaymiz
+qabulTugmasi.addEventListener('click', function () {
+  // Foydalanuvchidan matn qabul qilish
+  const matn = document.getElementById('matn').value;
+  // Matnni saxranit qilish
+  // Masalan, uni konsolga chiqaring
+  console.log('Qabul qilingan matn:', matn);
+});
+// JavaScript yordamida tugmani tanlab olamiz
+const qabulTugmasi = document.getElementById('qabulTugmasi');
+
+// Tugma bosilganda amalni boshlaymiz
+qabuasi.addEventListener('click'), function () {
+  // Foydalanuvchidan matn qabul qilish
+  const matn = document.getElementById('matn').value;
+  // Matnni saxranit qilish
+  // Masalan, uni konsolga chiqaring
+  console.log('Qabul qilingan matn:', matn);
+
+  // Matnning har bir belgisini chiqarish
+  for (let i = 0; i < matn.length; i++) {
+    console.log(matn[i]);
+  }
+}
