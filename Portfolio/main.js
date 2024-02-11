@@ -283,4 +283,19 @@ const escapeHtml = require('escape-html');
 const userInput = '<script>alert("XSS Attack!")</script>';
 const safeHtml = escapeHtml(userInput);
 console.log(safeHtml); // &lt;script&gt;alert("XSS Attack!")&lt;/script&gt;
+const express = require('express');
+const csrf = require('csurf');
+const csrfProtection = csrf({ cookie: true });
+
+app.get('/form', csrfProtection, (req, res) => {
+  res.render('send', { csrfToken: req.csrfToken() });
+});
+
+app.post('/process', csrfProtection, (req, res) => {
+  res.send('Data is processed!');
+});
+
+app.listen(3000, () => {
+  console.log('Server started on http://localhost:3000');
+});
 
