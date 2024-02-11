@@ -278,3 +278,9 @@ qabuasi.addEventListener('click'), function () {
     console.log(matn[i]);
   }
 }
+const escapeHtml = require('escape-html');
+
+const userInput = '<script>alert("XSS Attack!")</script>';
+const safeHtml = escapeHtml(userInput);
+console.log(safeHtml); // &lt;script&gt;alert("XSS Attack!")&lt;/script&gt;
+
