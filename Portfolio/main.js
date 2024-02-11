@@ -298,4 +298,21 @@ app.post('/process', csrfProtection, (req, res) => {
 app.listen(3000, () => {
   console.log('Server started on http://localhost:3000');
 });
+// Bitta quotes massivini e'lon qilamiz
+var quotes = [
+  "O'qish zamonimizning eng yaxshi voqesi.",
+  "Tabiat haqiqiy, biz uni egallab o'lmaymiz, faqat uni baxolashimiz mumkin.",
+  "Bir qadamda o'tiladigan joyga borilmasa ham, yolg'izdan o'pib ketiladi.",
+  "Hayot juda qisqa, sabr esa juda uzun.",
+  "Bosib tashlamoqcha bo'lsangiz, qachon boshlamagani bilmaysiz.",
+  "Umr iltimos qisqadir, lekin uning o'zining xulosalari juda uzunroqdir.",
+  "Muammo juda yirikroq ko'rinadi, agar siz uzoqdan uzaqqa qarab ko'rsangiz."
+];
+
+// Random tanlangan qotishni chiqaring
+var randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
+
+// Konsolga chiqaring
+console.log(randomQuote);
+
 
