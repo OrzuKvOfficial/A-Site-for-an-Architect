@@ -314,5 +314,5 @@ var randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
 
 // Konsolga chiqaring
 console.log(randomQuote);
-
+``
 
