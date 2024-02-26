@@ -1,318 +1,216 @@
-var x; // Declare x
-x = 5; // Assign 5 to x
-
-elem = document.getElementById("demo");
-elem.innerHTML = x;
-const person = {
-  firstName: "John",
-  lastName: "Doe",
-  id: 5566,
-  fullName: function () {
-    return this.firstName + " " + this.lastName;
-  }
-};
-
-// JavaScript kodlari
-document.getElementById('rangOzgartir').addEventListener('click', function () {
-  // Rang o'zgartirish uchun kerakli kodlar
-  let ranglar = ['qora', 'oq'];
-  let buttonElement = document.getElementById('rangOzgartir');
-
-  // Joriy rangni aniqlash
-  let joriyRang = buttonElement.style.backgroundColor || window.getComputedStyle(buttonElement).backgroundColor;
-
-  // Joriy rangni indeksini topish
-  let indeks = ranglar.indexOf(joriyRang);
-
-  // Yangi rangni o'rnating
-  indeks = (indeks + 1) % ranglar.length;
-
-  // Yangi rangni qo'yish
-  buttonElement.style.backgroundColor = ranglar[indeks];
-});
-
-// Tarjima funksiyasi
-function tarjima(qator, til) {
-  // Bu joyda siz tilni almashtirish logikasini yozishingiz kerak
-  // Masalan, API orqali tarjima qilishingiz mumkin
-  // Mana shu joyda API-ni chaqirish misoli
-  // Bu faqat misol, aslida siz boshqa usullarni ham ishlatingiz mumkin
-  // Masalan, lokal fayllar orqali tarjima qilish
-  // yoki saytdan ma'lumot olish
-  // Bu yerda tilni o'zgartirish funksiyasini ishlataylik
-  let tarjimaNatija = "";
-
-  // API-ni chaqiramiz yoki boshqa usul orqali tilni almashtiramiz
-  // Bu faqat misol, siz o'zingiz API-ni qo'shishingiz kerak
-  // Misol uchun API manzili va so'rovnoma kerak bo'ladi
-  // let apiUrl = "https://api.example.com/tarjima";
-  // let response = makeApiRequest(apiUrl, { qator, til });
-
-  // Keyingi qismni API-ni chaqirishga moslashtiring
-  // Yuqoridagi qismni o'zgartirish uchun kerak bo'ladi
-  // Agar API-ni ishlatsangiz, uni javobini olish uchun kerak bo'ladi
-  // let javob = response.json();
-
-  // Javobni olishni boshqarish uchun o'zingizni talablarizga muvofiq kod yozing
-  // Bu faqat misol
-  // if (javob.success) {
-  //     tarjimaNatija = javob.result;
-  // } else {
-  //     tarjimaNatija = "Tarjima amalga oshmadi";
-  // }
-
-  // Agar siz boshqa tilni o'zgartirish usulini ishlatsangiz, uni yozing
-
-  return tarjimaNatija;
+document.addEventListener("DOMContentLoaded", function() {
+  var styleTag = document.createElement('style');
+  styleTag.innerHTML = `
+  body {
+    background-color: #E1E4E9;
+    padding-top: 56px;
 }
 
-// Tarjima qilmoqchi bo'lgan matn
-let matn = "Hello, world!";
-// Tarjima qilmoqchi bo'lgan til
-let til = "uzbek";
+.navbar-nav .nav-item {
+    margin-right: 120px;
+    /* font-family: 'Raleway';font-size: 16px; */
+    font-family: 'Raleway', sans-serif;
+    font-weight: inherit;
+}
 
-// Tarjima funksiyasini chaqirish
-let natija = tarjima(matn, til);
 
-// Tarjima natijasini konsolga chiqarish
-console.log(natija);
+.main-image-container img {
+    width: 100%;
+    height: auto;
 
-// API manzili
-const apiUrl = 'https://jsonplaceholder.typicode.com/users/1';
+}
 
-// Fetch funktsiyasi orqali API ga so'rov jo'natish
-fetch(apiUrl)
-  .then(response => {
-    // HTTP statusni tekshirish
-    if (!response.ok) {
-      throw new Error(`HTTP xato: ${response.status}`);
+.empty-field {
+    width: 100%;
+    height: 110px;
+}
+.anything{
+    width: 100%;
+    height: 20px;
+}
+.anything2{
+    width: 100%;
+    height: 28px;
+}
+
+.anything3{
+    width: 100%;
+    height: 26px;
+}
+
+.footer-icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-icon {
+    margin: 0 10px;
+    /* Adjust the margin as needed */
+    width: 40px;
+    /* Set the desired width */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #343a40;
+    /* Set the background color */
+    transition: background-color 0.3s ease;
+    /* Add a transition effect */
+}
+
+
+@media (max-width: 1200px) {
+    footer {
+        text-align: center;
     }
-    // JSON formatda javobni qaytarish
-    return response.json();
-  })
-  .then(data => {
-    // Ma'lumotlarni olish
-    console.log('API javobi:', data);
-    // Ma'lumotlarni ishlatishingiz mumkin
-  })
-  .catch(error => {
-    // Xatolarni aniqlash va xabar chiqarish
-    console.error('Xatolik yuz berdi:', error.message);
-  });
 
-let element = document.getElementById('elementId');
-// Elementning matnini o'zgartirish
-element.innerHTML = 'Yangi matn';
-
-console.log('Bu xabar console-da chiqadi');
-
-// Funksiya yaratish
-function salom(name) {
-  return 'Salom, ' + name + '!';
-}
-// Funksiyani chaqirish
-let salomMatni = salom('Dunyo');
-console.log(salomMatni);
-
-// Foydalanuvchidan ma'lumot olish
-let ism = prompt('Ismingizni kiriting:');
-// Foydalanuvchi ismini chiqarish
-alert('Salom, ' + ism + '!');
-
-// Interval orqali har bir sekundda bir narsani bajaramiz
-setInterval(function () {
-  console.log('Narsa');
-}, 1000);
-
-// Timeout orqali bir marotaba narsani bajaramiz
-setTimeout(function () {
-  console.log('Bir marta');
-}, 5000);
-// Elementni animatsiyalash
-let animatsiyaElementi = document.getElementById('animatsiyaId');
-animatsiyaElementi.style.transition = 'all 2s'; // 2 sekundga o'tish
-animatsiyaElementi.style.opacity = 0; // Opasitetni o'zgartirish
-let firstName = "John";
-let lastName = "Doe";
-
-let text = `Welcome ${firstName}, ${lastName}!`; let price = 10;
-let VAT = 0.25;
-
-let total = `Total: ${(price * (1 + VAT)).toFixed(2)}`;
-const express = require('express');
-const nodemailer = require('nodemailer');
-const bodyParser = require('body-parser');
-
-const app = express();
-const port = 3000;
-
-app.use(bodyParser.urlencoded({ extended: true }));
-
-app.post('/send-email', (req, res) => {
-  const email = req.body.email;
-  const message = req.body.message;
-
-  // Nodemailer yordamida emailni yuborish
-  // Bu joyda email yuborish uchun SMTP serveri haqida ma'lumotlarni sozlash kerak
-});
-
-app.listen(port, () => {
-  console.log(`Server is listening at http://localhost:${port}`);
-});
-const http = require('http');
-
-const server = http.createServer((req, res) => {
-  res.writeHead(200, { 'Content-Type': 'text/plain' });
-  res.end('Salom, dunyo!\n');
-});
-
-const PORT = 3000;
-const HOST = 'localhost';
-
-server.listen(PORT, HOST, () => {
-  console.log(`Server http://${HOST}:${PORT}/ da ishlayapti`);
-});
-
-function loadDoc() {
-  const xhttp = new XMLHttpRequest();
-  xhttp.onload = function () { myFunction(this); }
-  xhttp.open("GET", "cd_catalog.xml");
-  xhttp.send();
-}
-function myFunction(xml) {
-  const xmlDoc = xml.responseXML;
-  const x = xmlDoc.getElementsByTagName("CD");
-  let table = "<tr><th>Artist</th><th>Title</th></tr>";
-  for (let i = 0; i < x.length; i++) {
-    table += "<tr><td>" +
-      x[i].getElementsByTagName("ARTIST")[0].childNodes[0].nodeValue +
-      "</td><td>" +
-      x[i].getElementsByTagName("TITLE")[0].childNodes[0].nodeValue +
-      "</td></tr>";
-  }
-  document.getElementById("demo").innerHTML = table;
-}
-function sum(...args) {
-  let sum = 0;
-  for (let arg of args) sum += arg;
-  return sum;
-}
-
-let x = sum(4, 9, 16, 25, 29, 100, 66, 77);
-print
-document.getElementById("myH").innerHTML = "My First Page";
-document.getElementById("myP").innerHTML = "My first paragraph.";
-const x = 5;
-const y = 6;
-const z = x + y;
-const price1 = 5;
-const price2 = 6;
-const PI = 3.141592653589793;
-PI = 3.14;      // This will give an error
-PI = PI + 10;   // This will also give an error
-for (let i = 1; i <= 5; i++) {
-  console.log(i);
-}
-// HTML-dagi ranglarni olish
-var ranglar = document.querySelectorAll('.rang');
-
-// Har bir rang uchun hodisani qo'shish
-ranglar.forEach(function (rang) {
-  rang.addEventListener('click', function () {
-    // Rangni olish
-    var tanlanganRang = this.getAttribute('data-rang');
-    // Qo'llanuvchiga tanlangan rangni chiqarish
-    console.log('Tanlangan rang: ' + tanlanganRang);
-    // Boshqa amallar ham bajara olish mumkin
-  });
-});
-function animatsiya() {
-  var button = document.getElementById('animatsiyaBtn');
-  // Qo'llanuvchi tugmani o'zgartirish
-  button.classList.add('animating');
-  // Animatsiya tugagandan so'ng olib tashlash
-  setTimeout(function () {
-    button.classList.remove('animating');
-  }, 500);
-}
-document.addEventListener('DOMContentLoaded', function () {
-  var animatsiyaElementi = document.getElementById('animatsiyaElementi');
-  var yurishX = 0; // Boshlang'ich X qiymati
-  var animatsiyaHodisasi = setInterval(yurish, 10); // Animatsiya yurish tezligi
-
-  function yurish() {
-    // Agar animatsiya elementi ekran chegarasidan o'tsa, intervalni to'xtatish
-    if (yurishX >= window.innerWidth - animatsiyaElementi.offsetWidth) {
-      clearInterval(animatsiyaHodisasi);
-    } else {
-      // Animatsiya elementini o'ngga o'zgartirish
-      yurishX++;
-      animatsiyaElementi.style.left = yurishX + 'px';
+    .footer-icons {
+        display: flex;
+        /* font-size: 14px; */
+        color: #ffffff;
+        margin: 0 10px;
+        transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
     }
-  }
-});
-// JavaScript yordamida tugmani tanlab olamiz
 
+    .footer-icon {
+        font-size: 20px;
+        width: auto;
+        transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
+    }
 
-// Tugma bosilganda amalni boshlaymiz
-qabulTugmasi.addEventListener('click', function () {
-  // Foydalanuvchidan matn qabul qilish
-  const matn = document.getElementById('matn').value;
-  // Matnni saxranit qilish
-  // Masalan, uni konsolga chiqaring
-  console.log('Qabul qilingan matn:', matn);
-});
-// JavaScript yordamida tugmani tanlab olamiz
-const qabulTugmasi = document.getElementById('qabulTugmasi');
+    .footer-icon:hover {
+        color: #28a745;
+        transform: scale(1.2);
+    }
 
-// Tugma bosilganda amalni boshlaymiz
-qabuasi.addEventListener('click'), function () {
-  // Foydalanuvchidan matn qabul qilish
-  const matn = document.getElementById('matn').value;
-  // Matnni saxranit qilish
-  // Masalan, uni konsolga chiqaring
-  console.log('Qabul qilingan matn:', matn);
-
-  // Matnning har bir belgisini chiqarish
-  for (let i = 0; i < matn.length; i++) {
-    console.log(matn[i]);
-  }
+    p {
+        margin-bottom: 5px;
+        width: auto;
+        transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
+    }
 }
-const escapeHtml = require('escape-html');
 
-const userInput = '<script>alert("XSS Attack!")</script>';
-const safeHtml = escapeHtml(userInput);
-console.log(safeHtml); // &lt;script&gt;alert("XSS Attack!")&lt;/script&gt;
-const express = require('express');
-const csrf = require('csurf');
-const csrfProtection = csrf({ cookie: true });
+@media (max-width: 767px) {
+    footer {
+        text-align: center;
+    }
 
-app.get('/form', csrfProtection, (req, res) => {
-  res.render('send', { csrfToken: req.csrfToken() });
+    .footer-icons {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .footer-icon {
+        margin: 0 10px;
+        font-size: 20px;
+        width: auto;
+        transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
+    }
+
+    .footer-icon:hover {
+        color: #28a745;
+        transform: scale(1.2);
+    }
+}
+
+
+
+
+@media (min-width: 992px) {
+    #changeButton {
+        display: none;
+    }
+}
+
+footer {
+    background-color: #343a40;
+    color: #ffffff;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+.footer-icon {
+    font-size: 14px;
+    color: #ffffff;
+    margin: 0 10px;
+    transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
+    width: 20px;
+    margin: 14px;
+}
+
+.footer-icon:hover {
+    color: #28a745;
+    transform: scale(1.2);
+}
+
+.main-image-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.overlay-container {
+    width: calc(50% - 10px);
+    margin-bottom: 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+
+}
+
+.overlay:hover {
+    opacity: 1;
+}
+
+@media (max-width: 900px){
+    .anything{
+        width: 100%;
+        height: 20px;
+    }
+    .anything2{
+        width: 100%;
+        height: 25px;
+    }
+}
+@media (max-width: 290px){
+    .anything{
+        width: 100%;
+        height: 15px;
+    }
+    .anything2{
+        width: 100%;
+        height:10px;
+    }
+}
+@media (max-width: 380px){
+    .anything{
+        width: 100%;
+        height: 15px;
+    }
+    .anything2{
+        width: 100%;
+        height:10px;
+    }
+}
+  `;
+  
+  document.head.appendChild(styleTag);
 });
-
-app.post('/process', csrfProtection, (req, res) => {
-  res.send('Data is processed!');
-});
-
-app.listen(3000, () => {
-  console.log('Server started on http://localhost:3000');
-});
-// Bitta quotes massivini e'lon qilamiz
-var quotes = [
-  "O'qish zamonimizning eng yaxshi voqesi.",
-  "Tabiat haqiqiy, biz uni egallab o'lmaymiz, faqat uni baxolashimiz mumkin.",
-  "Bir qadamda o'tiladigan joyga borilmasa ham, yolg'izdan o'pib ketiladi.",
-  "Hayot juda qisqa, sabr esa juda uzun.",
-  "Bosib tashlamoqcha bo'lsangiz, qachon boshlamagani bilmaysiz.",
-  "Umr iltimos qisqadir, lekin uning o'zining xulosalari juda uzunroqdir.",
-  "Muammo juda yirikroq ko'rinadi, agar siz uzoqdan uzaqqa qarab ko'rsangiz."
-];
-
-// Random tanlangan qotishni chiqaring
-var randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
-
-// Konsolga chiqaring
-console.log(randomQuote);
-``
-
