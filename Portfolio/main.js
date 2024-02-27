@@ -227,3 +227,11 @@ function validateForm() {
   // Boshqa tekshirishlar
 }
 
+try {
+    // Bajarish kerak bo'lgan kod
+} catch (error) {
+    console.error("Xatolik yuz berdi:", error);
+    // Xatoni yechish yoki qo'llab-quvvatlash uchun qo'shimcha kod
+}
+
+
