@@ -214,3 +214,16 @@ footer {
   
   document.head.appendChild(styleTag);
 });
+
+
+
+function validateForm() {
+  var username = document.getElementById("username").value;
+  var email = document.getElementById("email").value;
+  if (username == "" || email == "") {
+    alert("Iltimos, barcha maydonlarni to'ldiring");
+    return false;
+  }
+  // Boshqa tekshirishlar
+}
+
