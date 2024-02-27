@@ -244,3 +244,38 @@ function changeStyle() {
     inputElement.style.color = 'red';
     // Boshqa stil atributlarini ham sozlash mumkin
 }
+
+// Ma'lumotlarni jo'natish uchun URL
+const endpoint = 'https://api.example.com/data';
+
+// Ma'lumotlar obyekti
+const data = {
+  key1: 'value1',
+  key2: 'value2'
+};
+
+// So'rov obyekti yaratish
+const request = new XMLHttpRequest();
+
+// So'rovni ochish (POST metodi orqali ma'lumotlarni yuborish)
+request.open('POST', endpoint, true);
+request.setRequestHeader('Content-Type', 'application/json');
+
+// So'rovni jo'natish
+request.send(JSON.stringify(data));
+
+// So'rovni yakunlash uchun xizmat qilish
+request.onload = function() {
+  if (request.status >= 200 && request.status < 400) {
+    // Qabul qilingan javobni tahlil qilish
+    const response = JSON.parse(request.responseText);
+    console.log(response);
+  } else {
+    console.error('Xatolik sodir bo\'ldi.');
+  }
+};
+
+// Xatolikni tekshirish
+request.onerror = function() {
+  console.error('So\'rovni amalga oshirishda xatolik.');
+};
