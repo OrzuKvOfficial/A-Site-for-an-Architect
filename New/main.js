@@ -17,6 +17,21 @@ document.addEventListener("DOMContentLoaded", function() {
         width: 100%;
         height: auto;
     }
+    @keyframes moveRightToLeft {
+        0% {
+            transform: translateX(100%);
+        }
+
+        100% {
+            transform: translateX(-100%);
+        }
+    }
+
+    .moving-text {
+        display: inline-block;
+        animation: moveRightToLeft 10s linear infinite;
+        /* Adjust the duration and timing function as needed */
+    }
 
     #accordion {
         margin-top: 20px;
