@@ -233,5 +233,8 @@ try {
     console.error("Xatolik yuz berdi:", error);
     // Xatoni yechish yoki qo'llab-quvvatlash uchun qo'shimcha kod
 }
+console.log("Kodning bu qismi ishga tushdi.");
+// Yoki
+console.error("Bu xatolik sodir bo'ldi.");
 
 
