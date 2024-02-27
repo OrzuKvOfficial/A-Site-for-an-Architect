@@ -238,3 +238,9 @@ console.log("Kodning bu qismi ishga tushdi.");
 console.error("Bu xatolik sodir bo'ldi.");
 
 
+function changeStyle() {
+    var inputElement = document.getElementById('myInput');
+    inputElement.style.backgroundColor = 'lightblue';
+    inputElement.style.color = 'red';
+    // Boshqa stil atributlarini ham sozlash mumkin
+}
